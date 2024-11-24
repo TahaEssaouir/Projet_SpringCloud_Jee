@@ -3,6 +3,7 @@ package com.emsi.controllers;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,6 +23,7 @@ import com.emsi.repositories.ProduitRepository;
 
 
 /*Création du controller de type RestController*/
+@SpringBootApplication
 @RestController
 /*la route principale pour consommer l'api du controlleur*/
 @RequestMapping("api/produits/")  
@@ -30,16 +32,7 @@ public class ProduitController {
      @Autowired
        private ProduitRepository produitRepository;
    
-     
-     /*@RequestBody :permet de récupéer un objet json puis le convertir à un objet de type produit
-     {
-       "id":"5",
-       "nom":"TV",
-       "marque":"Sumsung",
-       "prix":1000,
-       "qteStock":5
-       }
-   */
+
      @PostMapping("/add")
    public ResponseEntity ajouter(@RequestBody Produit produit) {
    try {
@@ -102,17 +95,7 @@ public class ProduitController {
      @PutMapping("/{id}")
      public ResponseEntity<Produit> modifier(@PathVariable("id") int id,
          @RequestBody Produit produit) {
-     /*afin d'appeler modifier on doit envoyer:
-     1.{id} :l'id du produit à modifier
-     2.@RequestBody Produit produit :les nouvelle valeur à insérer
-      {
-     "id": 5,
-     "nom": "Nouveau Nom",
-     "marque": "Nouvelle marque",
-     "prix": 100.0,
-     "qteStock": 4
-     }
-       */
+
        if(produitRepository.save(produit)!=null)
        {
         /*si le produit est modifié avec succés*/
