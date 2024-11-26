@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus;
 
+=======
+>>>>>>> cb629fe709bd611785e090cf8cd0b1f5a17b1d59
 
 import entities.Produit;
 import repositories.ProduitRepository;
