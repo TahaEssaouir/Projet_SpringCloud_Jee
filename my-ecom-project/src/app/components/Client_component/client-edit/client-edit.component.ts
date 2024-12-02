@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from '../../services/client.service';
+import { ClientService } from '../../../services/client.service';
 import { ActivatedRoute,Router } from '@angular/router';
-import { Client } from '../../models/Clients';
+import { Client } from '../../../models/Clients';
 
 @Component({
   selector: 'app-client-edit',

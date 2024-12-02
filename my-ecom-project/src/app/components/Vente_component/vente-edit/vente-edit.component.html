@@ -1,0 +1,31 @@
+<div class="vente-edit-form">
+    <h2>Edit Vente</h2>
+    <form (ngSubmit)="updateVente()">
+      <div>
+        <label for="client">Client:</label>
+        <select id="client" [(ngModel)]="vente.client" name="client" required>
+          <option *ngFor="let client of clients" [ngValue]="client">
+            {{ client.nom }} {{ client.prenom }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="produit">Produit:</label>
+        <select id="produit" [(ngModel)]="vente.produit" name="produit" required>
+          <option *ngFor="let produit of produits" [ngValue]="produit">
+            {{ produit.nom }} ({{ produit.marque }})
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" [(ngModel)]="vente.date" name="date" required />
+      </div>
+      <div>
+        <label for="quantite">Quantité:</label>
+        <input type="number" id="quantite" [(ngModel)]="vente.quantite" name="quantite" required />
+      </div>
+      <button type="submit">Update Vente</button>
+    </form>
+  </div>
+  
