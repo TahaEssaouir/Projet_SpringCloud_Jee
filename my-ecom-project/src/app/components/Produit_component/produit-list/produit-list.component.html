@@ -1,6 +1,6 @@
 <div class="produit-list-card">
-    <h2>Produit List</h2>
-    <a routerLink="/add-produit">Add Produit</a>
+    <h2>Liste des Produits</h2>
+    <a routerLink="/add-produit" class="add-produit-btn">Ajouter un Produit</a>
   
     <table class="produit-table">
       <thead>
@@ -16,11 +16,15 @@
         <tr *ngFor="let produit of produits">
           <td>{{ produit.nom }}</td>
           <td>{{ produit.marque }}</td>
-          <td>{{ produit.prix }}</td>
+          <td>{{ produit.prix | currency }}</td>
           <td>{{ produit.qteStock }}</td>
-          <td>
-            <a [routerLink]="['/edit-produit', produit.id]">Edit</a>
-            <button (click)="deleteProduit(produit.id)">Delete</button>
+          <td class="actions">
+            <a [routerLink]="['/edit-produit', produit.id]" class="edit-btn" title="Modifier">
+              <i class="fas fa-edit"></i>
+            </a>
+            <button (click)="deleteProduit(produit.id)" class="delete-btn" title="Supprimer">
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
       </tbody>

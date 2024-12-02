@@ -1,56 +1,112 @@
+/* Container */
 .client-list-card {
-    max-width: 800px;
-    margin: 20px auto;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Heading */
+.client-list-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Add Client Button */
+.add-client-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-client-btn:hover {
+  background-color: #218838;
+}
+
+/* Table Styling */
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.client-table thead {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.client-table th,
+.client-table td {
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.client-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.client-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions .edit-btn,
+.actions .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.actions .delete-btn {
+  color: #dc3545;
+}
+
+.actions .edit-btn:hover {
+  color: #0056b3;
+}
+
+.actions .delete-btn:hover {
+  color: #c82333;
+}
+
+/* Icons */
+.actions i {
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-list-card {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
   }
-  
-  /* Heading */
-  .client-list-card h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+
+  .client-table th,
+  .client-table td {
+    padding: 10px;
+    font-size: 14px;
   }
-  
-  /* Button styling */
+
   .add-client-btn {
+    font-size: 14px;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
   }
-  
-  .add-client-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Table styling */
-  .client-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .client-table th, .client-table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .client-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  .client-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .client-table tr:hover {
-    background-color: #f1f1f1;
-  }
+}

@@ -1,22 +1,50 @@
-<div>
+<div class="produit-form-container">
+    <h2>{{ produit.id ? 'Modifier le Produit' : 'Ajouter un Produit' }}</h2>
     <form (ngSubmit)="updateProduit()">
-      <div>
-        <label for="nom">Nom:</label>
-        <input type="text" id="nom" [(ngModel)]="produit.nom" name="nom" required />
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input
+          type="text"
+          id="nom"
+          [(ngModel)]="produit.nom"
+          name="nom"
+          required
+        />
       </div>
-      <div>
-        <label for="marque">Marque:</label>
-        <input type="text" id="marque" [(ngModel)]="produit.marque" name="marque" required />
+      <div class="form-group">
+        <label for="marque">Marque :</label>
+        <input
+          type="text"
+          id="marque"
+          [(ngModel)]="produit.marque"
+          name="marque"
+          required
+        />
       </div>
-      <div>
-        <label for="prix">Prix:</label>
-        <input type="number" id="prix" [(ngModel)]="produit.prix" name="prix" required />
+      <div class="form-group">
+        <label for="prix">Prix :</label>
+        <input
+          type="number"
+          id="prix"
+          [(ngModel)]="produit.prix"
+          name="prix"
+          required
+          step="0.01"
+          min="0"
+        />
       </div>
-      <div>
-        <label for="qteStock">Quantité en Stock:</label>
-        <input type="number" id="qteStock" [(ngModel)]="produit.qteStock" name="qteStock" required />
+      <div class="form-group">
+        <label for="qteStock">Quantité en Stock :</label>
+        <input
+          type="number"
+          id="qteStock"
+          [(ngModel)]="produit.qteStock"
+          name="qteStock"
+          required
+          min="0"
+        />
       </div>
-      <button type="submit">{{ produit.id ? 'Update' : 'Add' }}</button>
+      <button type="submit" class="submit-btn">{{ produit.id ? 'Mettre à Jour' : 'Ajouter' }}</button>
     </form>
   </div>
   

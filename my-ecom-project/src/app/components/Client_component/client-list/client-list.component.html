@@ -1,30 +1,32 @@
 <div class="client-list-card">
-    <h2>Client List</h2>
-    <a routerLink="/add-client">Add Client</a>
-    
-    <table class="client-table">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Téléphone</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let client of clients">
-          <td>{{ client.nom }}</td>
-          <td>{{ client.prenom }}</td>
-          <td>{{ client.tel }}</td>
-          <td>{{ client.email }}</td>
-          <td>{{ client.password }}</td>
-          <td>
-            <a [routerLink]="['/edit-client', client.id]">Edit</a>
-            <button (click)="deleteClient(client.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2>Liste des Clients</h2>
+  <a routerLink="/add-client" class="add-client-btn">Ajouter un Client</a>
+
+  <table class="client-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.nom }}</td>
+        <td>{{ client.prenom }}</td>
+        <td>{{ client.tel }}</td>
+        <td>{{ client.email }}</td>
+        <td class="actions">
+          <a [routerLink]="['/edit-client', client.id]" class="edit-btn" title="Modifier">
+            <i class="fas fa-edit"></i>
+          </a>
+          <button (click)="deleteClient(client.id)" class="delete-btn" title="Supprimer">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

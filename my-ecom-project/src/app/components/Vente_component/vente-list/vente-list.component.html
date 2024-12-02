@@ -1,6 +1,6 @@
 <div class="vente-list-card">
-    <h2>Vente List</h2>
-    <a routerLink="/add-vente" class="add-vente-btn">Add Vente</a>
+    <h2>Liste des Ventes</h2>
+    <a routerLink="/add-vente" class="add-vente-btn">Ajouter une Vente</a>
   
     <table class="vente-table">
       <thead>
@@ -16,11 +16,15 @@
         <tr *ngFor="let vente of ventes">
           <td>{{ vente.client.nom }} {{ vente.client.prenom }}</td>
           <td>{{ vente.produit.nom }} ({{ vente.produit.marque }})</td>
-          <td>{{ vente.date | date }}</td>
+          <td>{{ vente.date | date:'dd/MM/yyyy' }}</td>
           <td>{{ vente.quantite }}</td>
-          <td>
-            <a [routerLink]="['/edit-vente', vente.id]">Edit</a>
-            <button (click)="deleteVente(vente.id)">Delete</button>
+          <td class="actions">
+            <a [routerLink]="['/edit-vente', vente.id]" class="edit-btn" title="Modifier">
+              <i class="fas fa-edit"></i>
+            </a>
+            <button (click)="deleteVente(vente.id)" class="delete-btn" title="Supprimer">
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
       </tbody>
